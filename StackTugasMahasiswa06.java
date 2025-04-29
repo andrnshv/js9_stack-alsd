@@ -55,10 +55,34 @@ public class StackTugasMahasiswa06 {
         }
     }
 
-    public void print() {
+    //sebelum modifikasi
+    /* public void print() {
         for (int i = 0; i<= top; i++) {
             System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
         }
         System.out.println("");
+    } */
+
+    //sesudah modifikasi untuk pertanyaan 2.1.3 nomor 1
+    public void print() {
+        for (int i = top; i >= 0; i--) {
+            System.out.println(stack[i].nama + "\t" + stack[i].nim + "\t" + stack[i].kelas);
+        }
+        System.out.println("");
+    }
+
+    //modifikasi pertanyaan 2.1.3 nomor 4
+    public Mahasiswa06 peekBottom() {
+        if (!isEmpty()) {
+            return stack[0];
+        } else {
+            System.out.println("Stack kosong! Tidak ada tugas yang dikumpulkan.");
+            return null;
+        }
+    }
+
+    //modifikasi pertanyaan 2.1.3 nomor 5
+    public int count() {
+        return top + 1;
     }
 }
